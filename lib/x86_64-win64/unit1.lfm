@@ -1,0 +1,77 @@
+object BTextEditor: TBTextEditor
+  Left = 299
+  Height = 601
+  Top = 219
+  Width = 800
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
+  Caption = 'BTextEditor'
+  ClientHeight = 576
+  ClientWidth = 800
+  DesignTimePPI = 120
+  KeyPreview = True
+  Menu = MainMenu1
+  OnCreate = FormCreate
+  LCLVersion = '2.0.8.0'
+  Scaled = False
+  object EditField: TMemo
+    Left = 0
+    Height = 552
+    Top = 0
+    Width = 800
+    Lines.Strings = (
+      'EditField'
+    )
+    OnChange = EditFieldChange
+    TabOrder = 0
+    WantTabs = True
+  end
+  object StatsLbl: TLabel
+    Left = 8
+    Height = 20
+    Top = 556
+    Width = 52
+    Caption = 'StatsLbl'
+    ParentColor = False
+  end
+  object MainMenu1: TMainMenu
+    left = 504
+    object FileMenu: TMenuItem
+      Caption = 'File'
+      object OpenFileMenuItem: TMenuItem
+        Caption = 'Open'
+        OnClick = OpenFileMenuItemClick
+      end
+      object CreateFileMenuItem: TMenuItem
+        Caption = 'New'
+        OnClick = CreateFileMenuItemClick
+      end
+      object SaveFileMenuItem: TMenuItem
+        Caption = 'Save'
+        OnClick = SaveFileMenuItemClick
+      end
+      object SaveAsMenuItem: TMenuItem
+        Caption = 'Save as'
+        OnClick = SaveAsMenuItemClick
+      end
+    end
+    object PrefSubMenu: TMenuItem
+      Caption = 'Preferences'
+      object FontMenu: TMenuItem
+        Caption = 'Font'
+        OnClick = FontMenuClick
+      end
+    end
+  end
+  object OpenDialog1: TOpenDialog
+    left = 533
+  end
+  object SaveDialog1: TSaveDialog
+    left = 562
+  end
+  object FontDialog1: TFontDialog
+    MinFontSize = 0
+    MaxFontSize = 0
+    left = 591
+  end
+end
